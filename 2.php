@@ -1,14 +1,16 @@
 <?php
-function codegenerator($panjang){
-    $karakter = '1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm';
-    $string ='';
-    for ($i=0; $i < $panjang; $i++){
-        $pos = rand(0, strlen($karakter)-1);
-        $string .=$karakter{$pos};
-    }
-    return $string;
-}	
-	for ($d=0; $d < 5; $d++){
-		echo codegenerator(28);
-		echo nl2br();
+    function cetak($length) {
+    	$strr = "";
+    	$characters = array_merge(range('a','z'), range('0','9'));
+    	$max = count($characters) - 1;
+    		for ($i = 0; $i < 28; $i++) {
+        		$rand = mt_rand(0, $max);
+        		$strr  .= $characters[$rand];
+    		}
+    		return $strr;
 	}
+for ($i=0; $i<3 ; $i++) { 
+echo cetak(3);
+echo "<br>";
+}
+ ?>
